@@ -1,0 +1,3 @@
+FROM alpine:latest 
+ADD app . 
+ENTRYPOINT ./app

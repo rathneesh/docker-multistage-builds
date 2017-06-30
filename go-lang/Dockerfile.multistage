@@ -1,0 +1,8 @@
+FROM golang:1.6.3 AS builder
+ADD src /src 
+WORKDIR /src
+RUN go build -o app
+
+FROM alpine
+COPY --from=builder /src/app /app
+ENTRYPOINT ./app
