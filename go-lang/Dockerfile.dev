@@ -1,2 +1,4 @@
-FROM golang:1.6.3
-RU
+FROM golang:1.8.3
+ADD src  /src 
+WORKDIR /src 
+RUN go build -o app
